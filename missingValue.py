@@ -58,3 +58,11 @@ print(data['Age'].sample(data['Age'].isnull().sum(), random_state=0))
 # Get the value away from 3rd standard deviation in normal distribution
 # This technique also handle the outlier
 print(data.Age.mean() + 3 * data.Age.std())
+
+
+## Arbitrary Value Imputation
+
+def impute(df,variable):
+    df[variable+'_hundred'] = df[variable].fillna(0)
+    #It should not be more frequantly present in dataset
+
